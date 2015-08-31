@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="Rose@NotInInk">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="Renaissance Insult Generator - Insult your loved ones with over 10,000 renaissance insults">
+  <title>Insult Generator</title>
+
+  <script type="text/javascript">
+    var adjectives = [
+      {"word":"apish","definition":"Foolish or resembling an ape"},
+      {"word":"artless","definition":"Crude, Unskillful"},
+      {"word":"beslubbering","definition":"Smear, Smeared, Slobbering"},
+      {"word":"calumniating","definition":"Uttering maliciously false statements"},
+      {"word":"cautelous","definition":"Crafty, Deceitful"},
+      {"word":"churlish","definition":"Rude, Vulgar"},
+      {"word":"coldblooded","definition":"Emotionless"},
+      {"word":"concusupiscible","definition":"Desirous, Lustful"},
+      {"word":"covetous","definition":"Greedy; Envious of the possessions of others"},
+      {"word":"crudy","definition":"Thick, as in curdy"},
+      {"word":"cuckoldly","definition":"Having the qualities of a hapless victim"},
+      {"word":"deceptious","definition":"Deceiving, Delusive"},
+      {"word":"degenerate","definition":"Lacking morals"},
+      {"word":"facinerious","definition":"Extremely wicked and vile"},
+      {"word":"fawning","definition":"Giving exaggerated praise to gain favor"},
+      {"word":"finical","definition":"Foppish in matters of dress, Fussily fastidious"},
+      {"word":"fusty","definition":"Moldy, Stale"},
+      {"word":"goatish","definition":"Lustful"},
+      {"word":"gorbellied","definition":"Big bellied, fat paunched"},
+      {"word":"greasy","definition":"Oily, Insincere"},
+      {"word":"heinous","definition":"Outrageously wicked, Odious, Atrocious"},
+      {"word":"incontinent","definition":"Indulging lust without restraint"},
+      {"word":"inexecrable","definition":"Unable to be overly detested"},
+      {"word":"insolent","definition":"Rude, Disrespectful"},
+      {"word":"lecherous","definition":"Excessively sex driven"},
+      {"word":"lisping","definition":"Speaking childishly"},
+      {"word":"loathly","definition":"Disgusting, Repulsive"},
+      {"word":"lubberly","definition":"Awkward, Clumsy, Loutish"},
+      {"word":"lumpish","definition":"Poorly formed: Stupid"},
+      {"word":"mammering","definition":"Hesitating, Stammering"},
+      {"word":"musty","definition":"Moldy; Stale; To emit a bad smell"},
+      {"word":"naughty","definition":"Wicked, Worthless, This word had a stronger meaning in Shakespeare's time"},
+      {"word":"obscene","definition":"Repugnant, Morally Offensive"},
+      {"word":"overgorged","definition":"Gluttonously stuffed"},
+      {"word":"panderly","definition":"Pimping"},
+      {"word":"pestiferous","definition":"Annoying, Troublesome, Dangerous to Society (associated with pest or plague)"},
+      {"word":"plumpy","definition":"Fat"},
+      {"word":"puking","definition":"Vomiting"},
+      {"word":"rascally","definition":"Untrustworthy"},
+      {"word":"reeky","definition":"Bad smelling"},
+      {"word":"sanctimonious","definition":"Hypocritically self-righteous"},
+      {"word":"sickly","definition":"Ill, Feeble"},
+      {"word":"slobbery","definition":"Wet, Slovenly, Muddy"},
+      {"word":"sneaping","definition":"Biting, Niping"},
+      {"word":"spongy","definition":"Soft"},
+      {"word":"stinking","definition":"Foul smelling"},
+      {"word":"superserviceable","definition":"Overeager to be of service, Officious"},
+      {"word":"thrasonical","definition":"Boastful, Bragging, Names after Thraso a bragging soldier in an ancient Roman comedy"},
+      {"word":"unhandsome","definition":"Ugly"},
+      {"word":"unwiped","definition":"Unwashed, Unclean"},
+      {"word":"viperous","definition":"Venomous, Malignant"},
+      {"word":"wanton","definition":"Promiscuous, Immodest"},
+      {"word":"warped","definition":"Twisted, Deformed"},
+      {"word":"witless","definition":"Without intelligence"}
+    ];
+    var modifiers = [
+      {"word":"bald-pated","definition":"Lacking hair"},
+      {"word":"barren-spirited","definition":"Empty, unoriginal"},
+      {"word":"beast-eating","definition":"Immature, Unweaned, The consumption of the milk a cow produced after calving was called beest"},
+      {"word":"beef-witted","definition":"Having the intelligence of a cow"},
+      {"word":"boiled-brains","definition":"Senseless, Hotheaded"},
+      {"word":"clay-brained","definition":"Stupid"},
+      {"word":"dirt-rotten","definition":"Filthy, Decaying"},
+      {"word":"dizzy-eyed","definition":"Giddy, Staring"},
+      {"word":"dull-brained","definition":"Dimwitted"},
+      {"word":"eye-offending","definition":"Gluttonous"},
+      {"word":"flap-eared","definition":"Having large ears"},
+      {"word":"foul-mouthed","definition":"Using vile language"},
+      {"word":"half-blooded","definition":"Partly of noble and partly of low birth"},
+      {"word":"hard-haired","definition":"Having thick or wiry hair"},
+      {"word":"hell-governed","definition":"Under the influence of the Devil, Mischievious"},
+      {"word":"hollow-eyed","definition":"Having sunken eyes, Like those of a cadavar"},
+      {"word":"hook-nosed","definition":"Having a nose resembling an eagle's beak"},
+      {"word":"ill-tempered","definition":"Irritable, In a foul mood"},
+      {"word":"knotty-pated","definition":"Thick-headed"},
+      {"word":"leaden-footed","definition":"Clumsily moving"},
+      {"word":"leptus-leering","definition":"Smiling like a toady"},
+      {"word":"lily-livered","definition":"Easily scared, Cowardly"},
+      {"word":"logger-headed","definition":"Stupidly blockheaded"},
+      {"word":"lust-breathed","definition":"Inspired by lust"},
+      {"word":"motley-minded","definition":"Foolish"},
+      {"word":"mouse-eaten","definition":"Dull spirited"},
+      {"word":"nook-shotten","definition":"Full of nooks and angles, Confusing, Deceptive"},
+      {"word":"one-trunk-inheriting","definition":"Poor, Having few possessions"},
+      {"word":"pale-hearted","definition":"Cowardly"},
+      {"word":"pigeon-livered","definition":"Timid, Fearful"},
+      {"word":"puke-stocking","definition":"High-quality dar colored leg wear"},
+      {"word":"puppy-headed","definition":"Silly, harmless"},
+      {"word":"rank-scented","definition":"Foul smelling"},
+      {"word":"rug-headed","definition":"Shaggy headed"},
+      {"word":"rump-fed","definition":"With a well nourished rump"},
+      {"word":"self-glorious","definition":"Vain"},
+      {"word":"senseless-obstinate","definition":"Stubborn, Unperceptive"},
+      {"word":"sheep-biting","definition":"Mean, Cowardly"},
+      {"word":"shrill-tongued","definition":"Communicating in harsh tones"},
+      {"word":"snail-paced","definition":"Slow in speed and thought"},
+      {"word":"sodden-witted","definition":"Ponderous in thinking, Made stupid by alcohol consumption"},
+      {"word":"stretch-mouthed","definition":"Wide mouthed, Foul mouthed"},
+      {"word":"stubborn-hard","definition":"Willfully unreasonable"},
+      {"word":"swag-bellied","definition":"Having a sizable sagging stomach"},
+      {"word":"tardy-gaited","definition":"Slow of pace"},
+      {"word":"thick-eyed","definition":"Having heavy eyes, Dull sighted"},
+      {"word":"three-suited","definition":"Servile, Servants were allotted three suits of clothes per year"},
+      {"word":"tripe-visaged","definition":"With a face like a dish of entrails"},
+      {"word":"under-honest","definition":"Untrustworthy, Dishonest"},
+      {"word":"uneducated","definition":"Ignorant"},
+      {"word":"useless","definition":"Without purpose or utility"},
+      {"word":"white-livered","definition":"Cowardly"}
+    ];
+    var nouns = [
+      {"word":"abomination","definition":"Loathsome thing, Cause of disgust"},
+      {"word":"arch-villain","definition":"Principal foe, or Enemy"},
+      {"word":"baggage","definition":"Prostitute, Term of contempt for an immoral woman"},
+      {"word":"bed-presser","definition":"Heavy, Lazy person"},
+      {"word":"blockhead","definition":"One who is slow to understand, Thick skulled"},
+      {"word":"braggart","definition":"Person who boasts loudly"},
+      {"word":"bugbear","definition":"Bogey, Frightful imaginary object"},
+      {"word":"bulls pizzle","definition":"Bull's Penis"},
+      {"word":"codpiece","definition":"Pouch worn by men in front of tight hose or breeches"},
+      {"word":"capocchia","definition":"Dolt, Simpleton"},
+      {"word":"cornuto","definition":"Cuckold, A man whose wife was unfaithful was though to grow horns"},
+      {"word":"costermonger","definition":"Fruit and vegetable seller"},
+      {"word":"cot-quean","definition":"Man who busies himself with womens household tasks"},
+      {"word":"coxcomb","definition":"Foolishly vain or conceited person"},
+      {"word":"cozener","definition":"Cheater, Impostor"},
+      {"word":"dissembler","definition":"Hypocrite"},
+      {"word":"dullard","definition":"Boring, Idiotic person"},
+      {"word":"dunghill","definition":"Heap of excrement"},
+      {"word":"fashion-monger","definition":"One foolishly concerned with fashion"},
+      {"word":"fleshmonger","definition":"Fornicator"},
+      {"word":"foot-licker","definition":"Sycophant, Flatterer"},
+      {"word":"fustilarian","definition":"Fat frowsy slut"},
+      {"word":"geck","definition":"Dupe, Fool, Object of Scorn"},
+      {"word":"giglet","definition":"Giddy girl, Lewd wanton person"},
+      {"word":"horn-beast","definition":"Lower creature"},
+      {"word":"horse-back-breaker","definition":"Immensely overweight"},
+      {"word":"idiot-worshipper","definition":"One with faith in stupidity"},
+      {"word":"jack-a-nape","definition":"Ape, Monkey, Conceited person"},
+      {"word":"lewdster","definition":"Crude, Sexually offensive person"},
+      {"word":"malignancy","definition":"Cancerous growth, Evil influence"},
+      {"word":"malmsey-butt","definition":"Large cask of malmsey, A strong sweet wine"},
+      {"word":"measle","definition":"Disease, Diseased wretch"},
+      {"word":"miscreant","definition":"Vile wrtech, Detestable scoundrel"},
+      {"word":"mushrump","definition":"Mushroom"},
+      {"word":"ox-head","definition":"Idiot, Horns were a symbol of cuckoldom"},
+      {"word":"parasite","definition":"One who takes while giving nothing"},
+      {"word":"pig-nut","definition":"An edible tuberous root"},
+      {"word":"pin-buttock","definition":"Narrow or sharp buttock"},
+      {"word":"potato finger","definition":"Lecher, Sweet potatoes were thought to be aphrodisiacs and hence stimulants to lechery"},
+      {"word":"princox","definition":"Saucy insolent boy"},
+      {"word":"purpose-changer","definition":"One who breaks faith"},
+      {"word":"quatch-buttock","definition":"Fat, squat, wide fanny"},
+      {"word":"rabbit-sucker","definition":"Very young, unweaned rabbit"},
+      {"word":"rampallian","definition":"Ruffian, Scoundrel"},
+      {"word":"rat-catcher","definition":"Person of low employment"},
+      {"word":"ratsbane","definition":"Rat poison"},
+      {"word":"renegatho","definition":"Renegade, A deserter of ones religion"},
+      {"word":"scum","definition":"Layer of filth"},
+      {"word":"scut","definition":"The short, erect tail of a deer"},
+      {"word":"starve-lackey","definition":"One who starves his servants"},
+      {"word":"stock-fish","definition":"Dried codfish"},
+      {"word":"ticklebrain","definition":"Drunkard"},
+      {"word":"under-skinker","definition":"An assistant tapster - One who draws beer for customers"},
+      {"word":"villiago","definition":"Scoundrel, Villain"}
+    ];
+
+    // Wait for page to load
+    window.onload = function() {
+      
+      // Get reference to the link on the page
+      var a = document.getElementById("new-insult-button");
+      
+      //Set code to run by assigning a function to onclick
+      a.onclick = function() {
+        var randomAdjective = Math.floor((Math.random() * 53));
+        var randomModifier = Math.floor((Math.random() * 51));
+        var randomNoun = Math.floor((Math.random() * 53));
+
+        document.getElementById('display-insult').innerHTML = adjectives[randomAdjective].word + "<br/>" + modifiers[randomModifier].word + "<br/>" + nouns[randomNoun].word;
+       
+        return false;
+      }
+
+    }
+  </script>
+
+  <style>
+    body{
+      background-color: #f2f6f5;
+    }
+    #full-screen{
+      background-image: url('speaker-background.png');
+      height: 1024px;
+      margin: 0 auto;
+      width: 768px;
+    }
+    #display-insult{
+      color: #010101;
+      display: table-cell;
+      font-family: Times New Roman;
+      font-size: 54px;
+      height: 424px;
+      left: 50px;
+      line-height: 1.4em;
+      position: relative;
+      text-align: center;
+      text-transform: capitalize;
+      top: 45px;
+      vertical-align: middle;
+      width: 688px;
+    }
+    #new-insult-button{
+      background-image: url('blue-circle.png');
+      height: 190px;
+      left: 450px;
+      position: relative;
+      text-align: center;
+      top: 310px;
+      vertical-align: middle;
+      width: 190px;
+    }
+    #new-insult-button p{
+      color: #fff;
+      display: table-cell;
+      font-family: Calibri, Arial, Tahoma;
+      font-size: 54px;
+      font-weight: 800;
+      line-height: 0.6em;
+      height: 190px;
+      text-align: center;
+      vertical-align: middle;
+      width: 190px;
+    }
+    a{
+      color: #fff;
+      font-size: 36px;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #fff;
+      text-decoration: none;
+    }
+    a:active{
+      color: #fff;
+      text-decoration: none;
+    }
+    a:visited{
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="full-screen">
+    <div id="display-insult">
+      <p>Renaissance<br/>
+      Insult<br/>
+      Generator</p>
+    </div><!-- end display-insult -->
+    <div id="new-insult-button">
+      <p><a id="genInsult" href="#">New<br/>Insult</a></p>
+    </div>
+  </div><!-- end full-screen -->
+</body>
+</html>
