@@ -1,0 +1,55 @@
+<!doctype html>
+    <meta charset="utf-8">
+    <script src="components/monaca-onsenui.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="words.js"></script>    
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+<script>
+  ons.bootstrap();
+  ons.ready(function() {
+    
+    // Add another Onsen UI element
+    //var content = document.getElementById("my-content");
+    //content.innerHTML="<ons-button>Generate Insult</ons-button>";
+    //ons.compile(content);
+    
+    // Get reference to the link on the page
+    var genInsult = document.getElementById("generate-insult");
+      
+    //Set code to run by assigning a function to onclick
+    genInsult.onclick = function() {
+        var randomAdjective = Math.floor((Math.random() * 53));
+        var randomModifier = Math.floor((Math.random() * 51));
+        var randomNoun = Math.floor((Math.random() * 53));
+        var newInsult = adjectives[randomAdjective].word + "\n" + modifiers[randomModifier].word + "\n" + nouns[randomNoun].word;
+        //alert( newInsult);
+        ons.notification.alert({
+            message: newInsult  
+        });       
+        return false;
+    
+    }
+    
+  });
+</script>
+<body>
+  <ons-navigator title="Navigator" var="myNavigator">
+    <ons-page>
+        <ons-toolbar>
+            <div class="center">Renaissance Insult Generator</div>
+        </ons-toolbar>
+        <ons-row style="text-align: center; margin-top: 40px; margin-bottom: 30px;">
+            <ons-col    align="center"  width="100%">
+                <img src="monologue.png" alt="Shakespearing Speaker" />   
+            </ons-col>
+        </ons-row>
+        <ons-row align="center" style="text-align: center;">
+            <ons-col    align="center"  width="100%">
+                <ons-button id="generate-insult"> Generate Insult </ons-button>
+            </ons-col>
+        </ons-row>
+    </ons-page>
+  </ons-navigator>
+</body>
+</!doctype>

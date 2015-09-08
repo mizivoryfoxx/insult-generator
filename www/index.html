@@ -1,0 +1,128 @@
+<!doctype html>
+    <meta charset="utf-8">
+    <script src="components/onsenui.js"></script>
+    <script src="components/loader.js"></script>
+    <script src="words.js"></script>    
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+<script>
+
+
+
+  ons.bootstrap();
+  ons.ready(function() {
+    
+    // Add another Onsen UI element
+    //var content = document.getElementById("my-content");
+    //content.innerHTML="<ons-button>Generate Insult</ons-button>";
+    //ons.compile(content);
+    
+    // Get reference to the link on the page
+    var genInsult = document.getElementById("generate-insult");
+      
+    //Set code to run by assigning a function to onclick
+    genInsult.onclick = function() {
+        var randomAdjective = Math.floor((Math.random() * 53));
+        var randomModifier = Math.floor((Math.random() * 51));
+        var randomNoun = Math.floor((Math.random() * 53));
+        var newInsult = adjectives[randomAdjective].word + "<br/>" + modifiers[randomModifier].word + "<br/>" + nouns[randomNoun].word;
+        //alert( newInsult);
+        document.getElementById("insult-box").innerHTML = newInsult;
+        return false;
+    }
+  });
+</script>
+<body>
+  <ons-navigator title="Navigator" var="myNavigator">
+    <ons-page style="background-image: url('wallpaper-background.png');">
+        <ons-row style="height: 15px;">
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row style="">
+            <ons-col width="0%">
+            </ons-col>
+            <ons-col width="100%">
+                <div style="background-color:#f07818;border-top:1px solid #9e4f10;border-bottom:1px solid #9e4f10;color:#fcebb6;font-family: Bookman Old Style, Times New Roman;font-size:36px;font-weight:bold;padding:15px 0 15px 0;text-align:center;">Renaissance<br />Insult<br />Generator</div>
+            </ons-col>
+            <ons-col width="0%">
+            </ons-col>
+        </ons-row>
+        <ons-row style="height: 30px;">
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+                <img src="left-quote.png" align="left" />
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row style="height: 15px;">
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row style="">
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+                <div id="insult-box" style="color:#fcebb6;font-family: Bookman Old Style, Times New Roman;font-size:24px;font-weight:bold;line-height:1.4em;text-align:center;text-transform:capitalize;">@#$%<br/>&*%#<br/>%&^%</div>
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row style="height: 15px;">
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row>
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+                <img src="right-quote.png" align="right" />
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row style="height: 30px;">
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+        <ons-row style="">
+            <ons-col width="10%">
+            </ons-col>
+            <ons-col width="80%">
+                <div id="generate-insult" style="background-color:#78c0a8;border-top: 1px solid #8addc1;border-left: 1px solid #8addc1;border-bottom: 1px solid #5e9784;border-right: 1px solid #5e9784;color:#eeeeee;font-family: Bookman Old Style, Times New Roman;font-size:20px;font-weight:boldl;letter-spacing:2px;padding:8px 0;text-align:center;">Generate Insult</div>
+            </ons-col>
+            <ons-col width="10%">
+            </ons-col>
+        </ons-row>
+    </ons-page>
+  </ons-navigator>
+</body>
+</!doctype>
